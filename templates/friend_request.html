@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='friendreq.css') }}"
+    />
+    <script
+      src="https://kit.fontawesome.com/8a3d976fe3.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Friend Requests</title>
+  </head>
+
+  <body>
+    <h1>Friend Requests <i class="fa-solid fa-users"></i></h1>
+    <div id="fb">
+      <div id="fb-top">
+        <p class="top">
+          <b>Accept friend requests and expand your digital tribe!</b>
+        </p>
+      </div>
+
+      <div id="friend-requests">
+        {% for request in sorted_requests %}
+        <br />
+
+        <div class="friend-request">
+          <p class="request-info">
+            <b>
+              <i class="fa-solid fa-circle-user fa-2xl"></i> User ID: {{
+              request[0] }}</b
+            >
+            <br />
+            <span id="time">
+              {{ sort_criteria.capitalize() }}: {{ request[1] }} minutes
+              ago</span
+            >
+          </p>
+          <div class="button-block">
+            <a
+              href="{{ url_for('accept_request', request_id=request[0]) }}"
+              id="confirm"
+              ><i class="fa-solid fa-circle-check"></i> Accept Request</a
+            >
+            <a
+              href="{{ url_for('reject_request', request_id=request[0]) }}"
+              id="delete"
+              ><i class="fa-solid fa-circle-xmark"></i> Reject Request</a
+            >
+          </div>
+        </div>
+
+        {% endfor %}
+      </div>
+    </div>
+  </body>
+</html>

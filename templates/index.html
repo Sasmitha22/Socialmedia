@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Socially Connected</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="static\images\favicon.png" rel="icon">
+  <link href="static\images\apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{{ url_for('static', filename='bootstrap.min.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='bootstrap-icons.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='glightbox.min.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='swiper-bundle.min.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='aos.css') }}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{{ url_for('static', filename='main.css') }}" rel="stylesheet">
+</head>
+
+<body class="index-page">
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top d-flex align-items-center">
+    <div class="container-fluid d-flex align-items-center justify-content-between">
+      <a href="{{ url_for('main_page') }}" class="logo d-flex align-items-center me-auto me-xl-0">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <!-- <img src="assets/img/logo.png" alt=""> -->
+        <h1>Socially Connected</h1>
+        <span>.</span>
+      </a>
+      <!-- Nav Menu -->
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="index.html#about">About</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav><!-- End Nav Menu -->
+      <a class="btn-getstarted" href="{{ url_for('login_page') }}">LOGIN</a>
+    </div>
+  </header><!-- End Header -->
+
+  <main id="main">
+
+    <!-- Hero Section - Home Page -->
+    <section id="hero" class="hero">
+      <img src="static\images\OIP.jpeg" alt="" data-aos="fade-in">
+      <div class="container">
+          <div class="col-lg-10">
+            <h2 data-aos="fade-up" data-aos-delay="100" >Welcome to Socially Connected</h2>
+            <p data-aos="fade-up" data-aos-delay="200">A social media website designed exclusively for SSN students</p>
+          </div>
+      </div>
+
+    </section><!-- End Hero Section -->
+
+   
+
+    <!-- About Section - Home Page -->
+    <section id="about" class="about">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row align-items-xl-center gy-5">
+
+          <div class="col-xl-5 content">
+            <h3>About Us</h3>
+            <h2>Connect, Share, and Inspire: Uniting the World, One Post at a Time</h2>
+            <p>Our mission is to empower individuals, amplify voices, and foster meaningful connections in the digital landscape.</p>
+          </div>
+
+          <div class="col-xl-7">
+            <div class="row gy-4 icon-boxes">
+
+              <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+                <div class="icon-box">
+                  <i class="bi bi-buildings"></i>
+                  <h3>Purpose</h3>
+                  <p>Unlock the power of your achievements. Share your success stories, inspire others, and join a vibrant community of college students celebrating milestones together.</p>
+                </div>
+              </div> <!-- End Icon Box -->
+
+              <div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
+                <div class="icon-box">
+                  <i class="bi bi-clipboard-pulse"></i>
+                  <h3>Enhance your profile with us</h3>
+                  <p>Supercharge your profile. Showcase your accomplishments, build a professional brand, and attract new opportunities with our platform designed to enhance your digital presence</p>
+                </div>
+              </div> <!-- End Icon Box -->
+
+              <div class="col-md-6" data-aos="fade-up" data-aos-delay="400">
+                <div class="icon-box">
+                  <i class="bi bi-command"></i>
+                  <h3>Connect</h3>
+                  <p>Connect with your peers like never before. Discover like-minded individuals, form valuable connections, and forge lifelong friendships within our vibrant community tailored for college students.</p>
+                </div>
+              </div> <!-- End Icon Box -->
+
+              <div class="col-md-6" data-aos="fade-up" data-aos-delay="500">
+                <div class="icon-box">
+                  <i class="bi bi-graph-up-arrow"></i>
+                  <h3>Achieve</h3>
+                  <p>Stay informed and shine bright. Receive event notifications, explore volunteering opportunities, and showcase your skills to unlock new achievements and make a positive impact within your community.</p>
+                </div>
+              </div> <!-- End Icon Box -->
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </section><!-- End About Section -->
+
+    <!-- Stats Section - Home Page -->
+    <section id="stats" class="stats">
+
+      <img src="static\images\stats-bg.jpg" alt="" data-aos="fade-in">
+
+      <div class="container position-relative" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item text-center w-100 h-100">
+              <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1" class="purecounter"></span>
+              <p>Clients</p>
+            </div>
+          </div><!-- End Stats Item -->
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item text-center w-100 h-100">
+              <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1" class="purecounter"></span>
+              <p>Projects</p>
+            </div>
+          </div><!-- End Stats Item -->
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item text-center w-100 h-100">
+              <span data-purecounter-start="0" data-purecounter-end="1453" data-purecounter-duration="1" class="purecounter"></span>
+              <p>Hours Of Support</p>
+            </div>
+          </div><!-- End Stats Item -->
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item text-center w-100 h-100">
+              <span data-purecounter-start="0" data-purecounter-end="32" data-purecounter-duration="1" class="purecounter"></span>
+              <p>Workers</p>
+            </div>
+          </div><!-- End Stats Item -->
+
+        </div>
+
+      </div>
+
+    </section><!-- End Stats Section -->
+
+   
+    <!-- Recent-posts Section - Home Page -->
+    <section id="recent-posts" class="recent-posts">
+
+      <!--  Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Hear from our users</h2>
+        <p>here are some of our user's experience - Join our community and be heard!</p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <article>
+
+              <div class="post-img">
+                <img src="static\images\blog-1.jpg" alt="" class="img-fluid">
+              </div>
+
+              <p class="post-category">Student</p>
+              <h2 class="title">
+                <a >Must use social media</a>
+              </h2>
+
+              <div class="d-flex align-items-center">
+                <img src="static\images\1.jpg" alt="" class="img-fluid post-author-img flex-shrink-0">
+                <div class="post-meta">
+                  <p class="post-author"> Sasmitha</p>
+                  <p class="post-date">
+                    <time datetime="2022-01-01">Jun 10, 2023</time>
+                  </p>
+                </div>
+              </div>
+
+            </article>
+          </div><!-- End post list item -->
+
+          <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <article>
+
+              <div class="post-img">
+                <img src="static\images\blog-2.jpg" alt="" class="img-fluid">
+              </div>
+
+              <p class="post-category">Student</p>
+
+              <h2 class="title">
+                <a >It is user friendly</a>
+              </h2>
+
+              <div class="d-flex align-items-center">
+                <img src="static\images\2.jpg" alt="" class="img-fluid post-author-img flex-shrink-0">
+                <div class="post-meta">
+                  <p class="post-author">Selcia</p>
+                  <p class="post-date">
+                    <time datetime="2022-01-01">Jun 15, 2023</time>
+                  </p>
+                </div>
+              </div>
+
+            </article>
+          </div><!-- End post list item -->
+
+          <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <article>
+
+              <div class="post-img">
+                <img src="static\images\blog-3.jpg" alt="" class="img-fluid">
+              </div>
+
+              <p class="post-category">Entertainer</p>
+
+              <h2 class="title">
+                <a >Enhanced my profile</a>
+              </h2>
+
+              <div class="d-flex align-items-center">
+                <img src="static\images\3.jpg" alt="" class="img-fluid post-author-img flex-shrink-0">
+                <div class="post-meta">
+                  <p class="post-author">Sangeetha</p>
+                  <p class="post-date">
+                    <time datetime="2022-01-01">Jun 22, 2023</time>
+                  </p>
+                </div>
+              </div>
+
+            </article>
+          </div><!-- End post list item -->
+
+        </div><!-- End recent posts list -->
+
+      </div>
+
+    </section><!-- End Recent-posts Section -->
+
+   
+  <!-- Scroll Top Button -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+
+  <!-- Vendor JS Files -->
+  <script src="{{ url_for('static', filename='bootstrap.bundle.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='glightbox.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='purecounter_vanilla.js') }}"></script>
+  <script src="{{ url_for('static', filename='isotope.pkgd.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='swiper-bundle.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='aos.js') }}"></script>
+  <script src="{{ url_for('static', filename='validate.js') }}"></script>
+  
+
+  <!-- Template Main JS File -->
+  <script src="{{ url_for('static', filename='main.js') }}"></script>
+
+</body>
+
+</html>

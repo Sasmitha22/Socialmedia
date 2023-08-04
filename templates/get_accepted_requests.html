@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='friendreq.css') }}"
+    />
+    <script
+      src="https://kit.fontawesome.com/8a3d976fe3.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Followers</title>
+  </head>
+  <body>
+    <!-- accepted_requests.html -->
+    <h1>Accepted Friend Requests <i class="fa-solid fa-users"></i></h1>
+    <div id="fb">
+      <div id="fb-top">
+        <p class="top">
+          <b>Embrace new connections!</b>
+        </p>
+      </div>
+      <div id="friend-requests">
+        {% for user in accepted_users %}
+        <br />
+        <hr>
+        <div class="friend-request">
+          <p class="request-info">
+            <b> <i class="fa-solid fa-circle-user fa-2xl"></i> User ID: {{ user }}</b> <br />
+          </p>
+        </div>  
+        {% endfor %}     
+      </div>
+    </div>
+    
+  </body>
+</html>
