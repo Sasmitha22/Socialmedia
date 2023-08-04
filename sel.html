@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Include Bootstrap CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+	<style>
+		/* Custom styles for the sidebar */
+		.sidebar {
+			background-color: #f8f9fa;
+			padding: 20px;
+		}
+
+		.profile-image {
+			width: 120px;
+			height: 120px;
+			border-radius: 50%;
+			object-fit: cover;
+		}
+
+		.profile-details {
+			margin-top: 20px;
+		}
+
+		.profile-details h4 {
+			margin-bottom: 10px;
+		}
+
+		.profile-details p {
+			margin-bottom: 5px;
+			color: #6c757d;
+		}
+
+		.follow-stats {
+			margin-top: 20px;
+		}
+
+		.follow-stats p {
+			margin-bottom: 5px;
+			color: #6c757d;
+		}
+
+		.advertisement {
+			margin-top: 20px;
+			border: 1px solid #ccc;
+			padding: 10px;
+		}
+
+		.advertisement h5 {
+			margin-bottom: 10px;
+		}
+
+		.advertisement p {
+			color: #6c757d;
+		}
+		
+		.right-sidebar {
+			width: 30%;
+			float: right;
+		}
+		
+		.uploaded-image {
+			max-width: 100%;
+			max-height: 100%;
+			object-fit: contain;
+		}
+		
+		.image-container {
+			margin-bottom: 20px;
+		}
+		
+		.image-actions {
+			margin-top: 10px;
+		}
+		
+		.like-btn,
+		.comment-btn {
+			margin-right: 10px;
+		}
+	</style>
+</head>
+<body>
+	<!-- Toolbar -->
+	<nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: #f29393;" >
+		<a class="navbar-brand" href="#">Socially Connected</a>
+
+		<!-- User profile dropdown -->
+		<ul class="navbar-nav ml-auto">
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					<img src="static\images\avatar.png" alt="User Avatar" style="width: 40px; height: 40px; border-radius: 50%;">
+				</a>
+				<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item" href="index.html">Logout</a>
+				</div>
+			</li>
+		</ul>
+	</nav>
+	<!-- End Toolbar -->
+
+	<div class="container-fluid">
+		<div class="row">
+			<!-- Sidebar -->
+			<div class="col-md-3 sidebar">
+				<img src="static\images\avatar.png" alt="User Avatar" class="profile-image">
+
+				<div class="profile-details">
+					<h4>John Doe</h4>
+					<p>Web Developer</p>
+					<p>Location: Chennai, India</p>
+					<hr>
+				</div>
+
+				<div class="follow-stats">
+						<p><strong>Followers:</strong> 1000</p>
+						<p><strong>Following:</strong> 500</p>
+						<p><strong>Posts:</strong> 200</p>
+						<hr>
+						<p><a href="{{ url_for('friend_request') }}"><strong>Friend Requests</strong></a></p>
+						<hr>
+				</div>
+			<div id="advertisementCarousel" class="carousel slide" data-ride="carousel" data-interval="10000">
+				<div class="carousel-inner">
+					<div class="carousel-item active">
+							<div class="advertisement">
+							<img src="static\images\2.png" alt="Advertisement 1" class="img-fluid">
+							<div class="advertisement-content">
+								<h5>Work-Life Balance is Within Reach: Register Today for the Business Conference 2023!</h5>
+								<p>Are you tired of the constant struggle to find harmony between your work and personal life? It's time to discover the key to achieving true work-life balance.</p>
+							</div>
+						</div>
+					</div>
+					<div class="carousel-item">
+						<div class="advertisement">
+						<img src="static\images\1.png" alt="Advertisement 2" class="img-fluid">
+						<div class="advertisement-content">
+							<h5>Master Any Skill, Anytime, Anywhere: Introducing Our Revolutionary Learning App!</h5>
+							<p>Are you ready to embark on a journey of knowledge and self-improvement? With our cutting-edge learning app, the power to learn is now at your fingertips. </p>
+						</div>
+						</div>
+					</div>
+					<div class="carousel-item">
+						<div class="advertisement">
+						<img src="static\images\3.png" alt="Advertisement 3" class="img-fluid">
+						<div class="advertisement-content">
+							<h5>Experience Divine Connection: Join Us at the Worship Conference 2023!</h5>
+							<p>Calling all worshippers! It's time to gather together and elevate our spirits in the presence of the divine.</p>
+						</div>
+						</div>
+					</div>
+					</div>
+				</div>
+			</div>
+			
+
+	
+<body>
+	<!-- Main Content -->
+
+<!-- Main Content -->
+<div class="container">
+	<div class="row">
+	  <div class="col-md-8">
+		<!-- Post Form -->
+		<div id="post-form-container" class="sticky-top mt-3">
+		  <div class="card">
+			<div class="card-body">
+			  <h5 class="card-title">Create a new post</h5>
+			  <form id="post-form">
+				<div class="form-group">
+				  <textarea class="form-control" rows="3" name="post-content" placeholder="Write something..."></textarea>
+				</div>
+				<div class="form-group">
+				  <label for="post-image">Upload an image:</label>
+				  <input type="file" class="form-control-file" id="post-image" name="post-image">
+				</div>
+				<button type="submit" class="btn btn-primary">Post</button>
+			  </form>
+			</div>
+		  </div>
+		</div>
+  
+		<!-- Posted Images -->
+		<div id="posted-images-container" class="mt-3"></div>
+  
+	  </div>
+	  <!-- End Main Content -->
+  
+	  <!-- Right Sidebar -->
+	  <div class="col-md-4 right-sidebar">
+		<div class="card">
+		  <div class="card-body">
+			<h5 class="card-title">Trending Posts</h5>
+			<ul class="list-group">
+			  <li class="list-group-item">
+				<a href="https://ssnvivid.com/" target="_blank">VIVID 7.0 is ongoing</a>
+			  </li>
+			  <li class="list-group-item">
+				<a href="https://forms.gle/1iT1Fggx6ZzsLmnm7" target="_blank">Form for volunteers</a>
+			  </li>
+			  <li class="list-group-item">
+				<a href="https://www.ssn.edu.in/college-of-engineering/it-faculty/" target="_blank">IT Department Faculty</a>
+			  </li>
+			  <li class="list-group-item">
+				<a href="https://timesofindia.indiatimes.com/topic/ssn-college-of-engineering/news" target="_blank">Check out the latest times of india news on SSN</a>
+			  </li>
+			  <li class="list-group-item">
+				<a href="https://www.ssn.edu.in/ssn_events/gallery/" target="_blank">SSN Events Gallery</a>
+			  </li>
+			</ul>
+		  </div>
+		</div>
+	  </div>
+	  <!-- End Right Sidebar -->
+	</div>
+  </div>
+  
+
+	<!-- Include jQuery -->
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+	<!-- Custom Script -->
+	<script>
+		$(document).ready(function() {
+  $("#post-form").submit(function(e) {
+    e.preventDefault();
+
+    // Get the form content
+    var postContent = $("textarea[name='post-content']").val();
+    var postImage = $("#post-image")[0].files[0];
+
+    // Create a new post element
+    var postElement = $("<div>").addClass("card mt-3 post"); // Add the 'post' class
+    var postBody = $("<div>").addClass("card-body");
+
+    var mediaElement = $("<div>").addClass("media");
+
+    var mediaBody = $("<div>").addClass("media-body");
+    var username = $("<h5>").addClass("mt-0").text("John Doe");
+    var content = $("<p>").text(postContent);
+
+    mediaBody.append(username, content);
+
+    if (postImage) {
+      var uploadedImage = $("<img>")
+        .addClass("img-fluid")
+        .attr("alt", "Posted Image")
+        .css("max-height", "400px");
+
+      // Read the uploaded image as URL
+      var reader = new FileReader();
+      reader.onload = function(e) {
+        uploadedImage.attr("src", e.target.result);
+      };
+      reader.readAsDataURL(postImage);
+
+      // Append the uploaded image to media body
+      mediaElement.append(uploadedImage);
+    }
+
+    mediaElement.append(mediaBody);
+    postBody.append(mediaElement);
+    postElement.append(postBody);
+
+    // Prepend the new post to the main content
+    $("#posted-images-container").append(postElement); // Append to the posted images container
+
+    // Clear the form inputs
+    $("textarea[name='post-content']").val("");
+    $("#post-image").val("");
+  });
+});
+	</script>
+
+	<!-- Include Bootstrap JS -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+
+</body>
+</html>
